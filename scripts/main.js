@@ -53,7 +53,7 @@ toggle.onclick=function(){
 
    document.addEventListener('click', function(event) {
     console.log(event.target.id)
-    if (event.target.id==game.keydown) {
+    if (event.target.id==game.keydown||game.stage==0) {
           gark()
     }
    })
