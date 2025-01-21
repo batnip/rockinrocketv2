@@ -53,7 +53,7 @@ toggle.onclick=function(){
    }
 
    var butt=true
-   dpad.addEventListener('mousedown', function(event) {
+   dpad.addEventListener('pointerenter', function(event) {
     console.log(event.target.id)
     if (event.target.id==game.keydown&&butt==true||game.stage==0) {
       if(event.target.className=="padB"){
@@ -62,7 +62,7 @@ toggle.onclick=function(){
       }
     }
    })
-   dpad.addEventListener('mouseup', function(event) {
+   dpad.addEventListener('pointerleave', function(event) {
     if(event.target.className=="padB"){
       butt=true
     }
