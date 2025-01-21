@@ -44,7 +44,7 @@ document.addEventListener('click', function(event) {
       if (event.target.className=="mode_button") {
                 
                 var mode=event.target.dataset.value 
-                if(isMobile&&mode=="advanced"){
+                if(mode=="advanced"){
                   $('#mobile').show()
                 }else{
                   $('#mobile').hide()

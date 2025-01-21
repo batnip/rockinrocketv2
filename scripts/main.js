@@ -1,5 +1,6 @@
 
 var game=document.getElementById("game");
+var game=document.getElementById("dpad");
 var light=document.getElementById("lightning");
 var total=document.getElementById("score")
 var retry=document.getElementById("retry");
@@ -51,10 +52,19 @@ toggle.onclick=function(){
        gark=countdown
    }
 
-   document.addEventListener('click', function(event) {
-    console.log(event.target.id+" turtle "+ game.keydown)
-    if (event.target.id==game.keydown||game.stage==0) {
+   var butt=true
+   dpad.addEventListener('mouseover', function(event) {
+    console.log(event.target.id)
+    if (event.target.id==game.keydown&&butt==true||game.stage==0) {
+      if(event.target.className=="padB"){
           gark()
+          butt=false
+      }
+    }
+   })
+   dpad.addEventListener('mouseout', function(event) {
+    if(event.target.className=="padB"){
+      butt=true
     }
    })
 document.addEventListener('keydown', function(event) {
