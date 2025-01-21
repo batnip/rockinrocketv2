@@ -52,7 +52,7 @@ toggle.onclick=function(){
    }
 
    document.addEventListener('click', function(event) {
-    console.log(event.target.id)
+    console.log(event.target.id+" turtle "+ game.keydown)
     if (event.target.id==game.keydown||game.stage==0) {
           gark()
     }
