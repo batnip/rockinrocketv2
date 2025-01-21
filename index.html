@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link rel="stylesheet" href="css/styles.css?v=1">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>  
+
+<div id="menu">
+    <div class="modal">
+        
+        <p class="title">Rockin' Rocket</p>
+                <button id="b1" class="mode_button" data-value="regular">Regular</button>
+                <button id="b2"class="mode_button" data-value="advanced">Advanced</button>
+            
+            
+        
+    </div>
+</div>
+
+<div id="settings">
+    <div class="modal">
+
+        
+           
+            <div id="practice_settings" class="settings flex_row">
+                <div class="settings_text">Practice Mode</div>
+                <label class="switch">
+                    <input id="practice_toggle" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            
+            <div id="beat_settings" class="settings flex_row">
+            <div class="settings_text">Beat Type:</div>
+            <select name="beat_type" id="beat">     
+                <option value="assets/drum.mp3">Drum</option>
+                <option value="assets/click.mp3">Click</option>
+            </select>
+            </div>
+            
+            <div id="arrow_settings" class="settings flex_row">
+                <div class="settings_text">Arrow Animation</div>
+                <label class="switch">
+                    <input id="arrow_toggle" type="checkbox" checked="checked">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+         <button id="b3" class="mode_button menu_button" data-value="regular">Main Menu</button>    
+    </div>
+</div>
+
+<div id="game">
+    <div id="settings_bar">
+        <label class="switch">
+        <input id="toggle" type="checkbox" checked="checked" >
+        <span class="slider round"></span>
+        </label>
+        <i id="settings_button"class="fa fa-gear settings_button"></i> 
+    </div>
+   
+    <div id="score" class="score"></div>
+    <div id="points" class="points">+100</div>
+        
+    <div>
+        <img id="left_cloud" class="cloud" src="assets/cloud.png">
+        <img id="right_cloud" class="cloud" style="margin-left: 50%;"src="assets/cloud.png">
+    </div>
+
+    <img id="lightning" class="lightning"  src="assets/lightning2.png">
+    <img id="platform" class="platform"  src="assets/platform2.png">
+    <div id="rocket_container" class="rocket_container">
+    <img id="rocket" class="rocket" src="assets/rocket.png">
+    <div id="pulse2" class="thruster"></div>
+    </div>
+   
+    <div id="beat_keys_container">
+        <h3 id="beat_animation"></h3>
+        <h3 id="beat_keys"></h3>
+    </div>
+    
+    <div id="retry">
+        <h1 class="retry">Nice Try!</h1>
+        <h3 class="retry">Press ENTER to restart</h3>
+    </div>
+
+    <div id="win">
+        <h1 class="retry">Nice Job!</h1>
+        <h3 class="retry">Press ENTER to restart</h3>
+        <button id="statsButton">stats</button>
+    </div>
+
+    <div id="countdown_container">
+        <h3 id="takeoff">tap along to the beat</h3>
+    </div>
+    
+    <div id="mobile">
+        <div id="dpad">
+            <div class="flex_row">
+                <button id="keyW" data-value="keyW"class="padB"> W </button>
+            </div>
+            <div class="flex_row">
+            <button id="KeyA" data-value="keyA"class="padB">A</button>
+            <button id="KeyS" data-value="keyS"class="padB">S</button>
+            <button id="KeyD" data-value="keyD"class="padB">D</button>
+            </div>
+            
+       
+        </div>
+    </div>
+    <audio id="audio" loop="true" src="assets/drum.mp3"></audio>  
+   
+</div>
+
+<div id="stats">
+    <div id="stat_buttons">
+        <button id="new_button" class="statbutton">New Game</button>
+        <button id="menu_button" class="statbutton menu_button">Main Menu</button>
+    </div>
+    <div id="chart">
+        <div class="labels">
+            <div class="top_labels">
+                <div class="chart_label">best time</div>
+                <div id="min" class="chart_label"></div>
+            </div>
+            <div class="top_labels">
+                <div class="chart_label">average</div>
+                <div id="average" class="chart_label"></div>
+            </div>
+            <div class="top_labels">
+                <div class="chart_label">worst time</div>
+                <div id="max" class="chart_label"></div>
+            </div>
+        </div>
+        
+        <div id="delay">&nbsp;</div>
+        
+        <div id="measure">
+            <div id="outer_labels"class="labels">
+                <div class="chart_label">early</div>
+                    <div id="inner_labels"class="labels">
+                        <div class="chart_label"></div>
+                        <div class="chart_label">perfect</div>
+                        <div class="chart_label"></div>
+                    </div>
+                <div class="chart_label">late</div>
+            </div>
+            
+            <div class="line1"></div>
+            
+        </div>
+        <div id="svg_container"></div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+<script src="scripts/input.js"></script>
+<script src="scripts/advanced.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/chart.js"></script>
+
