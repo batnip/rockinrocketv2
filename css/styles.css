@@ -484,17 +484,12 @@ img{
     top:0;
     width:50%;
     filter: drop-shadow(20px 20px 5px rgba(0, 0, 0, 0.24));
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-play-state: paused;
-    animation-name: cloud;
-    animation-duration: 5s;
-    backface-visibility: hidden;
-    perspective: 1000
+    
 
   
   }
 }
+
 
   @keyframes platform {
     0% {
