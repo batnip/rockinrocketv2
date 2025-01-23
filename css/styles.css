@@ -476,7 +476,7 @@ img{
         }
       }
 
-
+@media (prefers-reduced-motion) {
 .cloud {
     will-change: transform;
     position: absolute;
@@ -494,7 +494,7 @@ img{
 
   
   }
-
+}
 
   @keyframes platform {
     0% {

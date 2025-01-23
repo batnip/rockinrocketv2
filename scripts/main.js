@@ -1,6 +1,6 @@
 
 var game=document.getElementById("game");
-var game=document.getElementById("dpad");
+var dpad=document.getElementById("dpad");
 var light=document.getElementById("lightning");
 var total=document.getElementById("score")
 var retry=document.getElementById("retry");
@@ -70,7 +70,7 @@ toggle.onclick=function(){
 document.addEventListener('keydown', function(event) {
  
   if(event.code == game.keydown) { 
-    console.log("got it")
+    console.log(game.mode)
      gark()
   }
  
@@ -85,14 +85,15 @@ document.addEventListener('keydown', function(event) {
 
 
 
-game.onclick = (event) => {
-
+game.onclick = function(){
+console.log("clickpad")
   if(game.mode=="regular"){
+    
    gark() 
   }
     
  
-};
+}
 
 function main(){
       
