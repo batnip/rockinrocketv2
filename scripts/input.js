@@ -10,10 +10,6 @@ document.addEventListener('click', function(event) {
                 console.log("stats hit")
       }
       
-      if (event.target.id=="beat") {
-            var src= $("#beat").val()
-            $("#audio").attr("src", src)
-  }
       if (event.target.id=="new_button") {
                 $("#stats").hide()
                 $("#game").show()
@@ -62,3 +58,7 @@ document.addEventListener('click', function(event) {
 
 });
 
+function dropdown(){
+      var src= $("#beat").val()
+      $("#audio").attr("src", src)
+}
