@@ -53,15 +53,18 @@ toggle.onclick=function(){
    }
 
    var butt=true
-   dpad.addEventListener('touchstart', function(event) {
-    gark()
+   dpad.addEventListener('click', function(event) {
+    var key=event.target.id
+    if(game.stage==0){
+      key=game.keydown
+    }
+    if(key==game.keydown){
+      gark()
+    }
+    
   
    })
-   dpad.addEventListener('touchend', function(event) {
-    if(event.target.className=="padB"){
-      butt=true
-    }
-   })
+   
 document.addEventListener('keydown', function(event) {
  
   if(event.code == game.keydown) { 
