@@ -631,7 +631,7 @@ img{
     animation-duration: 1s;
   }
   .rocket_launch{
-    
+    will-change: transform;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-name: rocket_start;
@@ -709,6 +709,7 @@ img{
   z-index: -2;
 }
 .thruster {
+    will-change: transform;
     position:absolute;
     display: none;
     top:50%;
