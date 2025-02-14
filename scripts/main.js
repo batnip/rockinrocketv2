@@ -175,7 +175,7 @@ function audio_switch(){
 
 
 function fade_in(){
-  if(toggle.checked==true)
+  if(toggle.checked==true&&game.stage!=2)
     {
       audio.volume=0
       audio.play()

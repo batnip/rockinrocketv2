@@ -37,14 +37,26 @@ document.addEventListener('click', function(event) {
                 fade_in()
                 $("#settings").hide()
        }
+       if (event.target.className=="restart_button") {
+            console.log("restart")
+            restart()
+       }
       if (event.target.className=="mode_button") {
                 
                 var mode=event.target.dataset.value 
-                if(mode=="advanced"&&isMobile){
-                  $('#mobile').show()
-                }else{
-                  $('#mobile').hide()
+                if(isMobile)
+                {
+                  $("#retry1").empty().append("Press <button class='restart_button'>restart</button> to try again")
+                  $("#retry2").empty().append("Press <button class='restart_button'>restart</button> to try again")
+                 
+                  if(mode=="advanced"){
+                        $('#mobile').show()
+                  } 
+                  else{
+                        $('#mobile').hide()
+                  }
                 }
+                
                 console.log(mode)
                 $("#menu").hide()
                 $('#game').show()

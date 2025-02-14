@@ -83,7 +83,9 @@ option{
   z-index: 20;
 
 }
-
+.restart_button{
+  width: fit-content;
+}
 button{
   
   background-color: transparent;
@@ -397,6 +399,9 @@ button:hover{
  
 
 }
+.invisible{
+  display:none;
+}
 .beat_animation{
   display:block;
   text-align: center;
@@ -424,7 +429,7 @@ button:hover{
 .takeoff{
   opacity:0;
   animation-iteration-count: 1;
-  animation-name: countdown;
+  animation: countdown;
   animation-duration: .5s;
 }
 #textdiv{       
