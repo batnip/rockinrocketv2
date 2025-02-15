@@ -603,7 +603,7 @@ img{
   animation-play-state: paused;
   animation-iteration-count: 1;
   animation-name: platform;
-  animation-duration: 800ms;
+  animation-duration: 1s;
 
 }
   .rocket_container{
@@ -630,7 +630,7 @@ img{
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-name: rocket_start;
-    animation-duration: 500ms;
+    animation-duration: 800ms;
 
   }
   .paused{
