@@ -541,7 +541,7 @@ img{
     }
 
     100% {
-          top:40%;
+          transform: translateY(-20vh);
     }
   }
 
@@ -709,7 +709,7 @@ img{
   z-index: -2;
 }
 .thruster {
-    will-change: transform;
+    will-change: border-top;
     position:absolute;
     display: none;
     top:50%;
