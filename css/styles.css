@@ -535,11 +535,7 @@ img{
 
 
   @keyframes rocket_start {
-    0% {
-      top:100%;
-      transform: translateY(-80%);
-    }
-
+    
     100% {
           transform: translateY(-20vh);
     }
@@ -607,7 +603,7 @@ img{
   animation-play-state: paused;
   animation-iteration-count: 1;
   animation-name: platform;
-  animation-duration: 1s;
+  animation-duration: 800ms;
 
 }
   .rocket_container{
@@ -631,11 +627,10 @@ img{
     animation-duration: 1s;
   }
   .rocket_launch{
-    will-change: transform;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-name: rocket_start;
-    animation-duration: 400ms;
+    animation-duration: 500ms;
 
   }
   .paused{
