@@ -363,7 +363,8 @@ function rocket_takeoff(){
   pulse.style.animationIterationCount=1
   setAnimation(pulse,"thruster")
   pulse.style.display="block"
-  rcontainer.className="rocket_container rocket_launch"
+  setAnimation(rcontainer,"rocket_container rocket_launch")
+
  
 }
 
