@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
+    <meta name="title" content="Rockin' Rocket| Rhythm Game">
+    <meta name="description" content="Test your rhythm. See how well you can keep the beat as you take control of a rocket ship.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
     <link rel="stylesheet" href="css/styles.css?v=1">
@@ -136,14 +138,23 @@
         <button id="new_button" class="statbutton">New Game</button>
         <button id="menu_button" class="statbutton menu_button">Main Menu</button>
     </div>
+
+    
+    
     <div id="chart">
+
+        <div class="score_labels top_labels">
+                    <div class="chart_label">FINAL SCORE</div>
+                    <div id="stats_score" class="score_label"></div>
+        </div>
+        
         <div class="labels">
             <div class="top_labels">
                 <div class="chart_label">best time</div>
                 <div id="min" class="chart_label"></div>
             </div>
             <div class="top_labels">
-                <div class="chart_label">average</div>
+                <div class="chart_label">average time</div>
                 <div id="average" class="chart_label"></div>
             </div>
             <div class="top_labels">

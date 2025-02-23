@@ -211,7 +211,7 @@ button:hover{
 }
 #chart{
   width:100%;
-  top:10%;
+  top:5%;
   position: relative;
   display: flex;
   justify-content: center; /* Align horizontal */
@@ -242,6 +242,9 @@ button:hover{
     background:linear-gradient(white,white) center/100% 2px no-repeat;
   
 }
+.score_labels{
+  margin-bottom: 2%;
+}
 .top_labels{
   display: flex;
   justify-content: center; /* Align horizontal */
@@ -268,6 +271,11 @@ button:hover{
 #inner_labels{
   width:120px;
   min-width: 200px;
+}
+.score_label{
+  
+  color:white;
+  font-size: 3vmin;
 }
 .chart_label{
   color:white;
@@ -377,14 +385,15 @@ button:hover{
 }
 #countdown_container{
   position: fixed;
-  top: 30%;
+  top: 37%;
   width:100%
 }
 #beat_keys_container{
   position: fixed;
   display: grid;
   top: 18%;
-  width:100%
+  width:100%;
+ 
   
 }
 #beat_keys{
@@ -489,9 +498,9 @@ img{
 
 .cloud {
     will-change: transform;
-    position: absolute;
+    position: fixed;
     display:block;
-    top:0;
+   
     width:50%;
     filter: drop-shadow(20px 20px 5px rgba(0, 0, 0, 0.24));
     animation-iteration-count: infinite;
@@ -499,8 +508,7 @@ img{
     animation-play-state: paused;
     animation-name: cloud;
     animation-duration: 5s;
-    backface-visibility: hidden;
-    perspective: 1000
+    
 
   
   }

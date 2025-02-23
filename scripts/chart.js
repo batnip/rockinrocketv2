@@ -23,7 +23,7 @@ function loadchart(){
         rect1.setAttribute("class","rectangl");
         rect1.setAttribute('fill',"transparent")
         rect1.setAttribute('width','50vw')
-        rect1.setAttribute('height',5)
+        rect1.setAttribute('height',8)
         rect1.setAttribute('x',0)
         rect1.setAttribute('y', y)
         var rect=document.createElementNS(svgns,"rect")
@@ -31,7 +31,7 @@ function loadchart(){
         rect.setAttribute('fill',"white")
         rect.setAttribute('width',Math.abs(stats)*3)
         rect.setAttribute('min-width',Math.abs(stats)*3)
-        rect.setAttribute('height',5)
+        rect.setAttribute('height',8)
         rect.setAttribute('x', "50%")
         rect.setAttribute('y', y)
         if(stats<0){
@@ -40,7 +40,7 @@ function loadchart(){
         g.appendChild(rect1)
         g.appendChild(rect)
         svg.appendChild(g)
-        y+=10
+        y+=15
 
         }
         $("#svg_container").append(svg)
@@ -49,7 +49,7 @@ function loadchart(){
         
         var min=numbers.indexOf(Math.min.apply( Math, numbers))
         var max=numbers.indexOf(Math.max.apply( Math, numbers))
-
+        $("#stats_score").text(game.score+" ft")
         $("#min").text(game.stats[min] +"ms")
         $("#average").text(total/numbers.length +"ms")
         $("#max").text(game.stats[max] +"ms")
@@ -60,11 +60,13 @@ function loadchart(){
             g[i].onmouseover=function(){
                 
                 delay.innerText=g[i].getAttribute("value")+"ms"
+                
                 $(g[i]).find('.rectangl').css('fill','rgb(255,255,255,.1)')
                 
             }
             g[i].onmouseout=function(){
                 $(g[i]).find('.rectangl').css('fill','transparent')
+                
                 
             }
         }

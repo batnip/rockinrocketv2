@@ -5,6 +5,7 @@ class game_object{
      this.stage=0
      this.countdown=9
      this.score=0
+     this.count=0
      this.game_count=0
      this.keydown="Space"
      this.beat_keys=["8593","8592","8595","8594"]

@@ -26,9 +26,8 @@ var time2=null;
 var dif=null;
 var cor=0
 var addi=0
-let score_interval;
-var score=0
-var count=0
+
+
 let timer;
 
 
@@ -66,11 +65,14 @@ toggle.onclick=function(){
    })
    
 document.addEventListener('keydown', function(event) {
- 
-  if(event.code == game.keydown) { 
-    console.log(game.mode)
-     gark()
+  if(game.mode=="advanced"){
+    if(event.code == game.keydown) { 
+        gark()
+        }
+  }else{
+    gark()
   }
+    
  
 });
 document.addEventListener('keydown', function(event) {
@@ -84,7 +86,7 @@ document.addEventListener('keydown', function(event) {
 
 
 game.onclick = function(){
-console.log("clickpad")
+
   if(game.mode=="regular"){
     
    gark() 
@@ -108,7 +110,7 @@ function main(){
         rocket_pulse();
       }
       clearTimeout(timer)
-      console.log("garb")
+     
       timer=setTimeout(check_press, 650);
       
 }
@@ -131,21 +133,24 @@ function countdown(){
     audio.play()
   }
   */
+  if(game.mode=="advanced"){new_key()
+    beat_keys.style.display="block"
+  }
   
   if (game.countdown==0){
     clearTimeout(audioTimeout)
     game.stage=1
     gark=main
-    if(game.mode=="advanced"){new_key()}
+ 
     time()
     takeoff.style.display="none"
-    beat_keys.style.display="block"
+    
     if(practice_toggle.checked==false)
     {
       fade_out()
     }
     
-    //setInterval(audio_switch,2000)
+ 
     
     cloud_animate()
     rocket_takeoff()
@@ -190,9 +195,9 @@ function fade_out(){
 
 function audioCount(){
   clearTimeout(audioTimeout)
-  var count=game.countdown
+  var countdown=game.countdown
   audioTimeout=setTimeout(function() {
-    if(game.countdown+1==count){
+    if(game.countdown+1==countdown){
       //fade_out()
       game.countdown=9
       takeoff.className=""
@@ -205,23 +210,23 @@ function audioCount(){
 }
 
 function score_func(p){
-  //clearInterval(score_interval)
+
 
   var sub=p-16
 
   if(sub>=0){ 
   if(100-sub>0)
   {      
-  score+=100-sub
+  game.score+=100-sub
   points.innerText="+"+(100-sub)
   }
   }
   else{
-    score+=100
+    game.score+=100
     points.innerText="+100"
   }
-  console.log(score)
-  total.innerText=score+" ft"
+
+  total.innerText=game.score+" ft"
   points.style.display="block"
   setAnimation(points,"points")
 }
@@ -233,20 +238,26 @@ function restart(){
   time1=null;
   time2=null;
   dif=null;
-  score=0
-  count=0
+ 
+  
+  beat_keys.style.display="none"
+  beat_keys.innerText=""
   create_game(game.mode)
+  console.log(game.mode)
+  if(game.mode=="advanced"){
+    beat_keys.innerText=game.newkey()
+    beat_keys.style.display="block"
+  }
   startStage()
   takeoff.className=""
   takeoff.offsetWidth
   takeoff.innerText="tap along to the beat"
   takeoff.style.display="block" 
-  beat_keys.style.display="none"
-  beat_keys.innerText=""
+
   beat_animation.innerText=""
   fade_in()
   total.style.top="0%"
-  total.innerText=count +" ft"
+  total.innerText=game.count +" ft"
   pulse.style.animationIterationCount=0
   pulse.style.display="block"
   win.style.display="none"
@@ -263,14 +274,6 @@ function restart(){
 }
 
 
-function counter(){
-  count++
-  total.innerText=count
-  if(count>=score)
-  {
-    clearInterval(score_interval)
-  }
-}
 function check_press(){
  
   if(game.stage==1){
