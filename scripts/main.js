@@ -1,6 +1,5 @@
 
 var game=document.getElementById("game");
-var dpad=document.getElementById("dpad");
 var light=document.getElementById("lightning");
 var total=document.getElementById("score")
 var retry=document.getElementById("retry");
@@ -11,12 +10,8 @@ var rocket=document.getElementById("rocket");
 var rcontainer=document.getElementById("rocket_container");
 var pulse=document.getElementById("pulse2");
 var takeoff=document.getElementById("takeoff")
-var beat_keys=document.getElementById("beat_keys")
-var beat_animation=document.getElementById("beat_animation")
 var audio=document.getElementById("audio") //dont need dom object
 var points=document.getElementById("points")
-var toggle=document.getElementById("toggle")
-var arrow_toggle=document.getElementById("arrow_toggle")
 var practice_toggle=document.getElementById("practice_toggle")
 var platform=document.getElementById("platform")
 var stats=document.getElementById("stats")
@@ -26,50 +21,20 @@ var time2=null;
 var dif=null;
 var cor=0
 var addi=0
-
-
 let timer;
 
 
-toggle.onclick=function(){
-  if(toggle.checked==true)
-  {
-    fade_in()
-  }
-  else{
-    fade_out()
-  }
-  toggle.blur()
+function startStage() {
+      
+  gark=countdown
 
 }
 
-
-
-
-   function startStage() {
-      
-       gark=countdown
-   }
-
-   var butt=true
-   dpad.addEventListener('click', function(event) {
-    var key=event.target.id
-    if(game.stage==0){
-      key=game.keydown
-    }
-    if(key==game.keydown){
-      gark()
-    }
-    
-  
-   })
+ 
    
 document.addEventListener('keydown', function(event) {
-  if(game.mode=="advanced"){
-    if(event.code == game.keydown) { 
-        gark()
-        }
-  }else{
+  
+  if (event.code!="") {
     gark()
   }
     
@@ -77,8 +42,12 @@ document.addEventListener('keydown', function(event) {
 });
 document.addEventListener('keydown', function(event) {
 
-  if(event.code == "Enter"&&$("#game").is(":visible")) {
-      restart()
+  if(event.code == "Enter") {
+    $("#stats").hide()
+    $("#menu").hide()
+    $("#settings_bar").css("display","flex")
+    $("#game").show()
+    restart()
   }
 
 });
@@ -86,19 +55,15 @@ document.addEventListener('keydown', function(event) {
 
 
 game.onclick = function(){
-
-  if(game.mode=="regular"){
-    
-   gark() 
-  }
-    
- 
+  
+  gark() 
+  
 }
 
 function main(){
       
      
-      if(game.mode=="advanced"){new_key()}
+     
       if(time()!=true){return}
       if(game.gamecount()==true)
       {
@@ -115,27 +80,11 @@ function main(){
       
 }
 
-function new_key(){
-  if(arrow_toggle.checked==true){
-  beat_animation.innerText=beat_keys.innerText
-  var key=game.newkey()
-  beat_keys.innerText=key
-  setAnimation(beat_animation,"beat_animation")
-  }
-  else{
-  beat_keys.innerText=game.newkey()
-  }
-  
-}
+
 function countdown(){
   
- /*if(audio.paused==true){
-    audio.play()
-  }
-  */
-  if(game.mode=="advanced"){new_key()
-    beat_keys.style.display="block"
-  }
+
+ 
   
   if (game.countdown==0){
     clearTimeout(audioTimeout)
@@ -180,7 +129,7 @@ function audio_switch(){
 
 
 function fade_in(){
-  if(toggle.checked==true&&game.stage!=2)
+  if(game.stage!=2)
     {
       audio.volume=0
       audio.play()
@@ -218,12 +167,12 @@ function score_func(p){
   if(100-sub>0)
   {      
   game.score+=100-sub
-  points.innerText="+"+(100-sub)
+  points.innerText="+"+(100-sub) +" "
   }
   }
   else{
     game.score+=100
-    points.innerText="+100"
+    points.innerText="+100 "
   }
 
   total.innerText=game.score+" ft"
@@ -239,22 +188,17 @@ function restart(){
   time2=null;
   dif=null;
  
-  
-  beat_keys.style.display="none"
-  beat_keys.innerText=""
-  create_game(game.mode)
-  console.log(game.mode)
-  if(game.mode=="advanced"){
-    beat_keys.innerText=game.newkey()
-    beat_keys.style.display="block"
-  }
+
+  create_game()
+
+
   startStage()
   takeoff.className=""
   takeoff.offsetWidth
   takeoff.innerText="tap along to the beat"
   takeoff.style.display="block" 
 
-  beat_animation.innerText=""
+
   fade_in()
   total.style.top="0%"
   total.innerText=game.count +" ft"
@@ -335,7 +279,7 @@ function loss(){
 function game_end(){
   gark=null
   game.stage=2
-  beat_keys.style.display="none"
+
 }
 
 function finish(){

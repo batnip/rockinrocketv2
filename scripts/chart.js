@@ -6,7 +6,7 @@ function loadchart(){
         var svgns = "http://www.w3.org/2000/svg";
         var svg=document.createElementNS(svgns,"svg")
         svg.setAttribute('width',"100%")
-        svg.setAttribute('height',"100vh") 
+        svg.setAttribute('height',"40vh") 
         
         var y=0
         var numbers=game.stats.map(num => Math.abs(num));
@@ -28,7 +28,7 @@ function loadchart(){
         rect1.setAttribute('y', y)
         var rect=document.createElementNS(svgns,"rect")
         rect.setAttribute("class","rectangle");
-        rect.setAttribute('fill',"white")
+        rect.setAttribute('fill','rgb(255,255,255,1)')
         rect.setAttribute('width',Math.abs(stats)*3)
         rect.setAttribute('min-width',Math.abs(stats)*3)
         rect.setAttribute('height',8)
@@ -44,7 +44,7 @@ function loadchart(){
 
         }
         $("#svg_container").append(svg)
-        $("#chart").append("#svg_container")
+       // $("#chart").append("#svg_container")
         
         
         var min=numbers.indexOf(Math.min.apply( Math, numbers))
@@ -61,8 +61,8 @@ function loadchart(){
                 
                 delay.innerText=g[i].getAttribute("value")+"ms"
                 
-                $(g[i]).find('.rectangl').css('fill','rgb(255,255,255,.1)')
-                
+                $(g[i]).find('.rectangl').css('fill','rgb(255,255,255,.2)')
+               
             }
             g[i].onmouseout=function(){
                 $(g[i]).find('.rectangl').css('fill','transparent')
