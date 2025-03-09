@@ -253,14 +253,14 @@ button:hover{
 }
 #svg_container{
   width:50vw;
-  min-width: 200px;
+  min-width: 400px;
 }
 #measure{
   border-bottom: 20px;
 }
 .line1{
     width:50vw;
-    min-width: 300px;
+    min-width: 400px;
     height:20px;
     border-left:2px solid white;
     border-right:2px solid white;

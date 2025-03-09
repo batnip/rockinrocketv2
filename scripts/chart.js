@@ -29,13 +29,14 @@ function loadchart(){
         var rect=document.createElementNS(svgns,"rect")
         rect.setAttribute("class","rectangle");
         rect.setAttribute('fill','rgb(255,255,255,1)')
-        rect.setAttribute('width',Math.abs(stats)*3)
-        rect.setAttribute('min-width',Math.abs(stats)*3)
+        rect.setAttribute('width',Math.abs(stats)/2+"%")
+        rect.setAttribute('min-width',Math.abs(stats))
         rect.setAttribute('height',8)
         rect.setAttribute('x', "50%")
         rect.setAttribute('y', y)
         if(stats<0){
-                rect.setAttribute('transform','translate('+stats*3+',0)')  
+            rect.setAttribute('x', (100+stats)/2+"%")
+               // rect.setAttribute('transform','translate('+stats*3+',0)')  
             }
         g.appendChild(rect1)
         g.appendChild(rect)
