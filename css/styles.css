@@ -189,8 +189,6 @@ button:hover{
   position:relative;
   width:50vw;
   min-width:300px;
-  left:50%;
-  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   margin-top: 2%;
@@ -305,7 +303,7 @@ button:hover{
 #outer_labels{
   font-family: Arial, Helvetica, sans-serif;
   width:50vw;
-  min-width: 300px;
+  min-width: 400px;
 }
 #inner_labels{
   width:120px;

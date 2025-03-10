@@ -6,7 +6,7 @@ function loadchart(){
         var svgns = "http://www.w3.org/2000/svg";
         var svg=document.createElementNS(svgns,"svg")
         svg.setAttribute('width',"100%")
-        svg.setAttribute('height',"40vh") 
+        svg.setAttribute('height',"35vh") 
         
         var y=0
         var numbers=game.stats.map(num => Math.abs(num));
