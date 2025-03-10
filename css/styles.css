@@ -81,6 +81,9 @@ option{
   z-index: 20;
 
 }
+#statsButton{
+  width: fit-content; 
+}
 .new_button{
   width: fit-content; 
 }
@@ -196,7 +199,7 @@ button:hover{
   position:relative;
   display:block;
   margin-left: 15px;
-  font-size:3.8vmin; 
+  font-size:38px; 
   float: right;
   color:rgba(255, 255, 255, 0.9);
   cursor: pointer;
@@ -204,7 +207,7 @@ button:hover{
 }
 .info_button{
   position:relative;
-  font-size:3.8vmin; 
+  font-size:38px; 
   color:rgba(255, 255, 255, 0.9);
   cursor: pointer;
   z-index: 2;
