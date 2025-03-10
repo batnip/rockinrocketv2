@@ -189,6 +189,8 @@ button:hover{
   position:relative;
   width:50vw;
   min-width:300px;
+  left:50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   margin-top: 2%;
@@ -245,6 +247,7 @@ button:hover{
 }
 #chart{
   width:100%;
+  min-height: 500px;
   top:8%;
   position: relative;
   display: flex;
@@ -254,6 +257,7 @@ button:hover{
 }
 #svg_container{
   width:50vw;
+  min-height: 300px;
   min-width: 400px;
 }
 #measure{
