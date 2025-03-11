@@ -10,9 +10,16 @@ body{
 p{
   color:white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2vw;
+  font-size: 3vmin;
   margin:0;
 }
+@media only screen and (max-width: 1080px) {
+  p{
+    font-size: 5vmin;
+
+  }
+}
+
 h4{
   color:white;
   font-family: Arial, Helvetica, sans-serif;
@@ -115,6 +122,16 @@ button:hover{
   flex-direction: row;
   
 }
+@media only screen and (max-width: 1080px) {
+  #settings_bar{
+ 
+  justify-content: right; /* Align horizontal */
+  align-items: flex-end;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  }
+}
+
 #info{
   position:fixed;
   display: none;
@@ -134,9 +151,19 @@ button:hover{
   padding: 10px;
   margin-right:100px;
   border-radius: 20px;
+  min-width: 500px;
   width: fit-content;
 }
 
+@media only screen and (max-width: 1080px) {
+  .infomodal{
+    position:fixed;
+    left:50%;
+    top:30%;
+    transform: translateX(-50%);
+
+  }
+}
 #settings{
   position:fixed;
   display: none;
@@ -204,6 +231,12 @@ button:hover{
   color:rgba(255, 255, 255, 0.9);
   cursor: pointer;
   z-index: 2;
+}
+@media only screen and (max-width: 1080px) {
+  #settings_button{
+    margin-bottom: 15px;
+  
+  }
 }
 .info_button{
   position:relative;
