@@ -818,10 +818,10 @@ img{
   transform: translate(-50%, 0);
   width: 0; 
   height: 0;
-  filter: blur(20px); 
+  filter: blur(1.2vw); 
   opacity:1;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
+  border-left: 2.5vw solid transparent;
+  border-right: 2.5vw solid transparent;
   border-top: 50px solid rgb(255, 55, 0);
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -838,10 +838,10 @@ img{
     transform: translate(-50%, 0);
     width: 0; 
     height: 0;
-    filter: blur(20px); 
+    filter: blur(1.2vw); 
     opacity:1;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
+    border-left: 2.5vw solid transparent;
+    border-right: 2.5vw solid transparent;
     border-top: 50px solid rgb(255, 55, 0);
     animation-iteration-count: 1;
     animation-name: pulse2;

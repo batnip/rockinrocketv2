@@ -44,6 +44,7 @@ document.addEventListener('mouseover', function(event) {
             $("#info").css("display","flex")
       }
 });
+
 document.addEventListener('mouseout', function(event) {
       if (event.target.id=="info_button") {
             $("#info").css("display","none")
