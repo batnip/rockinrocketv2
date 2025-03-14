@@ -19,6 +19,12 @@ function loadchart(){
         var div=document.createElement("div")
         var g=document.createElementNS(svgns,"g")
         g.setAttribute("value",stats);
+        var rect2=document.createElementNS(svgns,"rect")
+        rect2.setAttribute('fill',"transparent")
+        rect2.setAttribute('width','100vw')
+        rect2.setAttribute('height',15)
+        rect2.setAttribute('x',0)
+        rect2.setAttribute('y', y)
         var rect1=document.createElementNS(svgns,"rect")
         rect1.setAttribute("class","rectangl");
         rect1.setAttribute('fill',"transparent")
@@ -38,6 +44,7 @@ function loadchart(){
             rect.setAttribute('x', (100+stats)/2+"%")
                // rect.setAttribute('transform','translate('+stats*3+',0)')  
             }
+        g.appendChild(rect2)
         g.appendChild(rect1)
         g.appendChild(rect)
         svg.appendChild(g)
@@ -76,7 +83,7 @@ function loadchart(){
                 }
             }
             else{
-                g[i].addEventListener('touchstart', function() {
+                g[i].addEventListener('dragover', function() {
                     delay.innerText=g[i].getAttribute("value")+"ms"
                     
                     $(g[i]).find('.rectangl').css('fill','rgb(255,255,255,.2)')
