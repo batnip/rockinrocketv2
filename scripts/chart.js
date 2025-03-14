@@ -65,10 +65,23 @@ function loadchart(){
                 $(g[i]).find('.rectangl').css('fill','rgb(255,255,255,.2)')
                
             }
+            
+            g[i].addEventListener('touchstart', function(event) {
+                delay.innerText=g[i].getAttribute("value")+"ms"
+                
+                $(g[i]).find('.rectangl').css('fill','rgb(255,255,255,.2)')
+               
+            });
+
             g[i].onmouseout=function(){
                 $(g[i]).find('.rectangl').css('fill','transparent')
                 
                 
             }
+            
+            g[i].addEventListener('touchend', function(event) {
+                $(g[i]).find('.rectangl').css('fill','transparent')
+               
+            });
         }
 }
