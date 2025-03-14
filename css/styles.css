@@ -783,16 +783,28 @@ img{
 
   }
 
+  @keyframes pulse {
+    0% {
+      border-top: 50px solid rgb(255, 55, 0);
+    }
+      20% {
+        border-top: 300px solid rgb(255, 55, 0);
+    }
+    100% {
+      border-top: 300px solid rgb(1, 164, 233, 0);
+    }
+  
+  }
 
 @keyframes pulse2 {
 	0% {
-    border-top: 50px solid rgb(255, 55, 0);
+    border-top: 10px solid rgb(255, 55, 0);
 	}
     20% {
-      border-top: 300px solid rgb(255, 55, 0);
+      border-top: 100px solid rgb(255, 55, 0);
 	}
 	100% {
-    border-top: 300px solid rgb(1, 164, 233, 0);
+    border-top: 100px solid rgb(1, 164, 233, 0);
 	}
 
 }
@@ -800,7 +812,7 @@ img{
     0% {
       border-top: 50px solid rgb(255, 55, 0);
     }
-      10% {
+    10% {
         border-top: 300px solid rgb(255, 55, 0);
     }
     100% {
@@ -808,7 +820,18 @@ img{
     }
     
 }
-
+@keyframes pulse_win2 {
+  0% {
+    border-top: 10px solid rgb(255, 55, 0);
+  }
+    10% {
+      border-top: 100px solid rgb(255, 55, 0);
+  }
+  100% {
+    border-top: 100px solid rgb(1, 164, 233, 0);
+  }
+  
+}
 
 .thruster_win{
   position:absolute;
@@ -829,6 +852,13 @@ img{
   animation-duration: 2s;
   z-index: -2;
 }
+@media only screen and (max-width: 1080px) {
+  .thruster{
+    border-top: 10px solid rgb(255, 55, 0);
+    animation-name: pulse_win2;
+  }
+
+}
 .thruster {
     will-change: border-top;
     position:absolute;
@@ -844,11 +874,18 @@ img{
     border-right: 2.5vw solid transparent;
     border-top: 50px solid rgb(255, 55, 0);
     animation-iteration-count: 1;
-    animation-name: pulse2;
+    animation-name: pulse;
     animation-duration: 1s;
     z-index: -2;
   }
+ 
+  @media only screen and (max-width: 1080px) {
+    .thruster{
+      border-top: 10px solid rgb(255, 55, 0);
+      animation-name: pulse2;
+    }
   
+  }
   
 
   .score {
