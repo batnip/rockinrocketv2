@@ -94,6 +94,12 @@ option{
 .new_button{
   width: fit-content; 
 }
+@media only screen and (max-width: 1080px) {
+  .new_button{
+    font-size: 6vmin;
+
+  }
+}
 .restart_button{
   width: fit-content;
 }
@@ -446,6 +452,11 @@ button:hover{
   margin-top: 0%;
   margin-bottom:5%;
 }
+@media only screen and (max-width: 1080px) {
+  .title{
+  font-size: 10vw;
+  }
+}
 .start{
   display:block;
   color:white;
@@ -548,6 +559,11 @@ button:hover{
   font-size: 3vw;
  
 
+}
+@media only screen and (max-width: 1080px) {
+  #takeoff{
+  font-size: 5vw;
+  }
 }
 .takeoff{
   opacity:0;
