@@ -7,7 +7,7 @@ function loadchart(){
         var svg=document.createElementNS(svgns,"svg")
         svg.setAttribute('width',"100%")
         svg.setAttribute('height',"300px") 
-        svg.setAttribute('min-height',"500px") 
+        
         var y=0
         var numbers=game.stats.map(num => Math.abs(num));
 
@@ -22,7 +22,7 @@ function loadchart(){
         var rect1=document.createElementNS(svgns,"rect")
         rect1.setAttribute("class","rectangl");
         rect1.setAttribute('fill',"transparent")
-        rect1.setAttribute('width','50vw')
+        rect1.setAttribute('width','100vw')
         rect1.setAttribute('height',8)
         rect1.setAttribute('x',0)
         rect1.setAttribute('y', y)

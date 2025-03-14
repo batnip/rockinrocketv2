@@ -290,19 +290,34 @@ button:hover{
 #svg_container{
   width:50vw;
   min-height: 300px;
-  min-width: 500px;
+}
+@media only screen and (max-width: 1080px) {
+  #svg_container{
+  width:90vw;
+  }
 }
 #measure{
   border-bottom: 20px;
+  justify-content: center;
+}
+@media only screen and (max-width: 1080px) {
+  .rectangl{
+  width:90vw;
+  }
 }
 .line1{
     width:50vw;
-    min-width: 400px;
     height:20px;
     border-left:2px solid white;
     border-right:2px solid white;
     background:linear-gradient(white,white) center/100% 2px no-repeat;
+    justify-content: center;
   
+}
+@media only screen and (max-width: 1080px) {
+  .line1{
+  width:90vw;
+  }
 }
 .line2{
     width:100px;
@@ -339,7 +354,12 @@ button:hover{
 #outer_labels{
   font-family: Arial, Helvetica, sans-serif;
   width:50vw;
-  min-width: 400px;
+
+}
+@media only screen and (max-width: 1080px) {
+  #outer_labels{
+  width:90vw;
+  }
 }
 #inner_labels{
   width:120px;
