@@ -65,7 +65,7 @@ function loadchart(){
         var g=document.getElementsByTagNameNS(svgns,"g")
         for(let i=0;i<g.length;i++)
         {
-            if(!isMobile){
+           
 
             
                 g[i].onmouseover=function(){
@@ -81,21 +81,7 @@ function loadchart(){
                     
                     
                 }
-            }
-            else{
-                g[i].addEventListener('dragover', function() {
-                    delay.innerText=g[i].getAttribute("value")+"ms"
-                    
-                    $(g[i]).find('.rectangl').css('fill','rgb(255,255,255,.2)')
-                
-                });
-
-                
-                
-                g[i].addEventListener('touchend', function() {
-                    $(g[i]).find('.rectangl').css('fill','transparent')
-                
-                });
-            }
+            
+            
         }
 }
