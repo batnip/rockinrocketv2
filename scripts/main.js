@@ -204,7 +204,6 @@ function restart(){
   total.innerText=game.count +" ft"
   pulse.style.animationIterationCount=0
   pulse.className="thruster"
-
   pulse.style.display="block"
   win.style.display="none"
   retry.style.display="none"
