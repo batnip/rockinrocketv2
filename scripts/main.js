@@ -278,9 +278,10 @@ function loss(){
   
 }
 function game_end(){
+  
   gark=null
   game.stage=2
-
+  fade_out()
 }
 
 function finish(){
